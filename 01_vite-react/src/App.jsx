@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div>
+    <>
     <center>
       <h1>Chai aur Code || Biswajit Natha Sharma</h1> 
       <h3>what i learn today</h3>
@@ -14,7 +14,7 @@ function App() {
       <li>How to "start" or "build" project using run command.</li>
       <li>What is JSX.</li>
     </ol>
-    </div>
+    </>
   )
 }
 
