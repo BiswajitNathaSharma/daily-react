@@ -6,9 +6,9 @@ export default function Card({
     userName,
     gitlink,
     followers,
-    bio,
-    
+    bio
 }) {
+
     return (
         <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="/">
@@ -38,4 +38,5 @@ export default function Card({
             </div>
         </div>
     );
+
 }

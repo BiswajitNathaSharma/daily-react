@@ -1,23 +1,27 @@
 import { useState,useEffect } from "react";
 
-function useProfileInfo(url) {
+function useProfileInfo(username) {
     const [ProfileInfo, setProfileInfo] = useState({})
     useEffect(() => {
         const fetchData = async () => {
             try {
-              const response = await fetch(url);
+              const response = await fetch(`https://api.github.com/users/${username}`);
+              
               const data = await response.json();
               setProfileInfo(data);
+              console.log(data)
             } catch (error) {
+              
               console.error('Error fetching data:', error);
             }
           };
       
-          if (url) {
+          if (username) {
             fetchData();
           }
     
-    }, [url])
+    }, [username])
+    
     return ProfileInfo
 }
 export default useProfileInfo;

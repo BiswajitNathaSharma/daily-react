@@ -19,11 +19,11 @@ function App() {
   document.querySelector('html').classList.add(themeMode)
   }, [themeMode])
   
-  const [url, setUrl] = useState("https://api.github.com/users/github")
-  const profileInfo = useProfileInfo(url)
+  const [username, setUsername] = useState("github")
+  const profileInfo = useProfileInfo(username)
   
   const handleSubmit = (submittedUrl) =>{
-    setUrl(submittedUrl);
+    setUsername(submittedUrl);
   };
   return (
 
@@ -33,10 +33,11 @@ function App() {
                     <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
                         <ThemeBtn/>
                     </div>
-                  <UserInput onUrlSubmit = {handleSubmit}/>  
+                  <UserInput onUrlSubmit = {handleSubmit} />  
 
                     <div className="w-full max-w-sm mx-auto">
                         <Card 
+                        
                         imgSrc={profileInfo.avatar_url}
                         userName={profileInfo.login}
                         gitlink={profileInfo.html_url}
@@ -48,7 +49,10 @@ function App() {
                     </div>
                 </div>
             </div>
+          
+            
             </ThemeProvider>
+            
   )
 }
 
