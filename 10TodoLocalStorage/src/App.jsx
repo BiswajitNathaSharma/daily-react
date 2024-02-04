@@ -7,6 +7,7 @@ import TodoForm from './components/TodoForm'
 function App() {
   const [todos, setTodos] = useState([])
     const addTodo = (todo)=>{
+      console.log("am addtodo running")
       setTodos((prev)=> [ {id:Date.now(),...todo},...prev])
     }
 
@@ -23,7 +24,7 @@ function App() {
     useEffect(() => {
       const todos = JSON.parse(localStorage.getItem("todos"))
       if(todos && todos.length > 0) setTodos(todos)
-
+    const todosTodo = todos[1]
     }, [])
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))

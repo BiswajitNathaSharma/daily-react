@@ -8,12 +8,14 @@ function TodoForm() {
     const {addTodo} = useTodo()
     const add = (e)=>{
         e.preventDefault()
-        if (!todo) return addTodo({todo, isCompleted: false})
+        if (!todo) return
+        
+        addTodo({todo, isCompleted: false})
         setTodo("")
     }
 
     return (
-        <form className="flex" onSubmit={add}>
+        <form className="flex" onSubmit={add} >
             <input
                 type="text"
                 placeholder="Write Todo..."
@@ -21,7 +23,7 @@ function TodoForm() {
                 value={todo}
                 onChange={(e)=> setTodo(e.target.value)}
             />
-            <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0">
+            <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0" >
                 Add
             </button>
         </form>
