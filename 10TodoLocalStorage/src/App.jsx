@@ -24,18 +24,29 @@ function App() {
     useEffect(() => {
       const todos = JSON.parse(localStorage.getItem("todos"))
       if(todos && todos.length > 0) setTodos(todos)
-    const todosTodo = todos[1]
     }, [])
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
 
   }, [todos])
-  
+  const [data, setData] = useState("")
+
+  useEffect(() => {
+      
+    fetch("https://api.freeapi.app/api/v1/public/quotes/quote/random")
+    .then((res)=>(res.json()))
+    .then((res)=>setData(res.data.content))
+
+  }, [])
+
+
+    
     
   return (
     <TodoProvider value={{todos, addTodo, deleteTodo, updateTodo ,toggleComplete}}>
       <div className="bg-[#172842] min-h-screen py-8">
                 <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
+                  <span className='text-xl text-center mb-8 mt-2'>{data}</span>
                     <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
                     <div className="mb-4">
                         {/* Todo form goes here */} 
