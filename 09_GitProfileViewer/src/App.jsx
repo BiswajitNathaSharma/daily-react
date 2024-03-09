@@ -5,6 +5,7 @@ import  Card from './components/Card'
 import ThemeBtn from './components/ThemeBtn'
   function App() {
     const [themeMode, setThemeMode] = useState("light")
+
     const lightMode = ()=>{
       setThemeMode("light")
     }
@@ -26,7 +27,9 @@ import ThemeBtn from './components/ThemeBtn'
           <div className="flex justify-end w-full max-w-sm mx-auto mb-4">
               <ThemeBtn/>
           </div>
-          <div className="w-full max-w-sm mx-auto">
+          
+          
+          <div className="w-full max-w-sm mx-auto h-full">
               <Card/>
 
           </div>
