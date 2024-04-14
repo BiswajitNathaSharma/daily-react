@@ -1,2 +1,4 @@
-import Header from "./header/Header";
-export default Header
+import Header from "./header/Header"
+import Body from "./body/Body";
+
+export {Header, Body}

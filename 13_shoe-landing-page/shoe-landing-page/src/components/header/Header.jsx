@@ -1,9 +1,10 @@
 import React from 'react'
 import "./header.css"
+import nike from "../../assets/nike.png"
 function Header() {
     return (
         <nav className='nav'>
-            <h1>Logo</h1>
+            <img src={nike} alt="" />
 
             <ul>
                 <li>Home</li>
